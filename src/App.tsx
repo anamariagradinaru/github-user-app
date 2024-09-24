@@ -1,4 +1,4 @@
-import { Container, Heading } from '@chakra-ui/react';
+import { Button, Container, Flex, Heading } from '@chakra-ui/react';
 import './App.css';
 import SearchBar from './components/search-bar';
 import Card from './components/card';
@@ -11,7 +11,17 @@ function App() {
             alignItems={'center'}
             gap={'15px'}
         >
-            <Heading>devfinder</Heading>
+            <Flex gap={'600px'} justifyContent={'center'} alignItems={'center'}>
+                <Heading color={'var(--heading-color)'}>devfinder</Heading>
+                <Button
+                    cursor={'pointer'}
+                    backgroundColor={'var(--card-color)'}
+                    border={'none'}
+                >
+                    Light{' '}
+                </Button>
+            </Flex>
+
             <SearchBar />
             <Card />
         </Container>

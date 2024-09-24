@@ -15,14 +15,21 @@ const Card = () => {
                         justifyContent={'space-between'}
                         alignItems={'center'}
                     >
-                        <Heading fontSize={'39px'}>The Octocat</Heading>
+                        <Heading
+                            fontSize={'39px'}
+                            color={'var(--heading-color)'}
+                        >
+                            The Octocat
+                        </Heading>
                         <Text color={'#697C9A'}>Joined 25 Jan 2011</Text>
                     </Flex>
                     <Flex direction={'column'} gap={'23px'}>
                         <Text fontSize={'24px'} color={'#0079FF'}>
                             @octocat
                         </Text>
-                        <Text color={'#4B6A9B'}>This profile has no bio</Text>
+                        <Text color={'var(--text-color)'}>
+                            This profile has no bio
+                        </Text>
                     </Flex>
                 </Flex>
 
@@ -30,28 +37,43 @@ const Card = () => {
                     gap={'40px'}
                     justifyContent={'center'}
                     alignItems={'center'}
-                    backgroundColor={' #f6f8ff'}
+                    backgroundColor={' var(--background-color)'}
                     width={'480px'}
                     height={'85px'}
                     borderRadius={'15px'}
                 >
                     <Flex direction={'column'}>
-                        <Text fontSize={'18px'} color={'#4B6A9B'}>
+                        <Text fontSize={'18px'} color={'var(--text-color)'}>
                             Repos
                         </Text>
-                        <Heading fontSize={'25px'}>8</Heading>
+                        <Heading
+                            color={'var(--heading-color)'}
+                            fontSize={'25px'}
+                        >
+                            8
+                        </Heading>
                     </Flex>
                     <Flex direction={'column'}>
-                        <Text fontSize={'18px'} color={'#4B6A9B'}>
+                        <Text fontSize={'18px'} color={'var(--text-color)'}>
                             Followers
                         </Text>
-                        <Heading fontSize={'25px'}>3938</Heading>
+                        <Heading
+                            color={'var(--heading-color)'}
+                            fontSize={'25px'}
+                        >
+                            3938
+                        </Heading>
                     </Flex>
                     <Flex direction={'column'}>
-                        <Text fontSize={'18px'} color={'#4B6A9B'}>
+                        <Text fontSize={'18px'} color={'var(--text-color)'}>
                             Following
                         </Text>
-                        <Heading fontSize={'25px'}>8</Heading>
+                        <Heading
+                            color={'var(--heading-color)'}
+                            fontSize={'25px'}
+                        >
+                            8
+                        </Heading>
                     </Flex>
                 </Flex>
                 <Flex justifyContent={'space-between'} alignItems={'center'}>
@@ -59,7 +81,7 @@ const Card = () => {
                         <Flex
                             alignItems={'center'}
                             gap={'10px'}
-                            color={'#4B6A9B'}
+                            color={'var(--text-color)'}
                         >
                             <FaMapMarkerAlt />
                             <Text>San Francisco</Text>
@@ -67,7 +89,7 @@ const Card = () => {
                         <Flex
                             alignItems={'center'}
                             gap={'10px'}
-                            color={'#4B6A9B'}
+                            color={'var(--text-color)'}
                         >
                             <FaPaperclip />
                             <Link>https://github.blog</Link>
@@ -77,7 +99,7 @@ const Card = () => {
                         <Flex
                             alignItems={'center'}
                             gap={'10px'}
-                            color={'#4B6A9B'}
+                            color={'var(--text-color)'}
                         >
                             <FaTwitter />
                             <Text>Not Available</Text>
@@ -85,7 +107,7 @@ const Card = () => {
                         <Flex
                             alignItems={'center'}
                             gap={'10px'}
-                            color={'#4B6A9B'}
+                            color={'var(--text-color)'}
                         >
                             <FaCity />
                             <Text>agithub</Text>

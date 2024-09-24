@@ -5,5 +5,21 @@
     font-family: 'Space Mono', monospace;
 }
 body {
-    background-color: #f6f8ff;
+    background-color: var(--background-color);
+}
+
+:root,
+[data-theme='light'] {
+    --background-color: #f6f8ff;
+    --card-color: #f6f8ff;
+    --text-color: #4b6a9b;
+    --heading-color: #000;
+    --outline: 0 4px 8px rgba(80, 80, 80, 0.2);
+}
+
+[data-theme='dark'] {
+    --background-color: #141d2f;
+    --card-color: #1e2a47;
+    --text-color: #fff;
+    --heading-color: #fff;
 }

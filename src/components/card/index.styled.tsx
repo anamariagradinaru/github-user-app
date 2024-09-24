@@ -7,16 +7,16 @@ const Container = styled.div`
     gap: 30px;
     width: 780px;
     height: 419px;
-    background-color: #fff;
+    background-color: var(--card-color);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(80, 80, 80, 0.2);
+    box-shadow: var(--outline);
     .image img {
         width: 100px;
         height: 100px;
         border-radius: 50px;
     }
     .image {
-        background-color: #4b6a9b;
+        background-color: var(--text-color);
         border-radius: 50%;
     }
 `;
