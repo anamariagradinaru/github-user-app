@@ -1,12 +1,11 @@
 import { Button, Container, Flex, Heading } from '@chakra-ui/react';
 import './App.css';
-import SearchBar from './components/search-bar';
 import Card from './components/card';
 import { useEffect, useState } from 'react';
+import SearchBar from './components/search-bar';
 
 function App() {
     const [theme, setTheme] = useState('light');
-
     const toggleTheme = () => {
         setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
     };
@@ -14,6 +13,22 @@ function App() {
     useEffect(() => {
         document.body.setAttribute('data-theme', theme);
     }, [theme]);
+
+    const [userInfo, setUserInfo] = useState({
+        username: '',
+        location: '',
+        email: '',
+        date: Date.now(),
+        bio: '',
+        repos: 0,
+        followers: 0,
+        following: 0,
+        twitter: '',
+        blog: '',
+        company: '',
+        join: '',
+    });
+
     return (
         <Container
             display={'flex'}
@@ -32,9 +47,8 @@ function App() {
                     {theme === 'light' ? 'Light' : 'Dark'} Theme
                 </Button>
             </Flex>
-
-            <SearchBar />
-            <Card />
+            <SearchBar setUserInfo={setUserInfo} />
+            <Card userInfo={userInfo} />
         </Container>
     );
 }

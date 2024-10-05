@@ -3,7 +3,24 @@ import Container from './index.styled';
 import image from '../../assets/card-image.png';
 import { FaMapMarkerAlt, FaPaperclip, FaTwitter, FaCity } from 'react-icons/fa';
 
-const Card = () => {
+interface Props {
+    userInfo: {
+        username: string;
+        location: string;
+        email: string;
+        date: number;
+        bio: string;
+        repos: number;
+        followers: number;
+        following: number;
+        twitter: string;
+        blog: string;
+        company: string;
+        join: string;
+    };
+}
+
+const Card = ({ userInfo }: Props) => {
     return (
         <Container>
             <Flex className="image" marginTop={'30px'}>
@@ -19,17 +36,17 @@ const Card = () => {
                             fontSize={'39px'}
                             color={'var(--heading-color)'}
                         >
-                            The Octocat
+                            {userInfo.username
+                                ? userInfo.username
+                                : 'Not Available'}
                         </Heading>
-                        <Text color={'#697C9A'}>Joined 25 Jan 2011</Text>
+                        <Text color={'#697C9A'}>{userInfo.join}</Text>
                     </Flex>
                     <Flex direction={'column'} gap={'23px'}>
                         <Text fontSize={'24px'} color={'#0079FF'}>
-                            @octocat
+                            {userInfo.email ? userInfo.email : 'Not Available'}
                         </Text>
-                        <Text color={'var(--text-color)'}>
-                            This profile has no bio
-                        </Text>
+                        <Text color={'var(--text-color)'}>{userInfo.bio}</Text>
                     </Flex>
                 </Flex>
 
@@ -44,24 +61,13 @@ const Card = () => {
                 >
                     <Flex direction={'column'}>
                         <Text fontSize={'18px'} color={'var(--text-color)'}>
-                            Repos
+                            Repos {userInfo.repos}
                         </Text>
                         <Heading
                             color={'var(--heading-color)'}
                             fontSize={'25px'}
                         >
-                            8
-                        </Heading>
-                    </Flex>
-                    <Flex direction={'column'}>
-                        <Text fontSize={'18px'} color={'var(--text-color)'}>
-                            Followers
-                        </Text>
-                        <Heading
-                            color={'var(--heading-color)'}
-                            fontSize={'25px'}
-                        >
-                            3938
+                            {userInfo.followers}
                         </Heading>
                     </Flex>
                     <Flex direction={'column'}>
@@ -72,7 +78,18 @@ const Card = () => {
                             color={'var(--heading-color)'}
                             fontSize={'25px'}
                         >
-                            8
+                            {userInfo.following}
+                        </Heading>
+                    </Flex>
+                    <Flex direction={'column'}>
+                        <Text fontSize={'18px'} color={'var(--text-color)'}>
+                            Following
+                        </Text>
+                        <Heading
+                            color={'var(--heading-color)'}
+                            fontSize={'25px'}
+                        >
+                            {userInfo.following}
                         </Heading>
                     </Flex>
                 </Flex>
@@ -84,7 +101,11 @@ const Card = () => {
                             color={'var(--text-color)'}
                         >
                             <FaMapMarkerAlt />
-                            <Text>San Francisco</Text>
+                            <Text>
+                                {userInfo.location
+                                    ? userInfo.location
+                                    : 'Not Available'}
+                            </Text>
                         </Flex>
                         <Flex
                             alignItems={'center'}
@@ -92,7 +113,11 @@ const Card = () => {
                             color={'var(--text-color)'}
                         >
                             <FaPaperclip />
-                            <Link>https://github.blog</Link>
+                            <Link>
+                                {userInfo.blog
+                                    ? userInfo.blog
+                                    : 'Not Available'}
+                            </Link>
                         </Flex>
                     </Flex>
                     <Flex direction={'column'} gap={'30px'}>
@@ -102,7 +127,11 @@ const Card = () => {
                             color={'var(--text-color)'}
                         >
                             <FaTwitter />
-                            <Text>Not Available</Text>
+                            <Text>
+                                {userInfo.twitter
+                                    ? userInfo.twitter
+                                    : 'Not Available'}
+                            </Text>
                         </Flex>
                         <Flex
                             alignItems={'center'}
@@ -110,7 +139,11 @@ const Card = () => {
                             color={'var(--text-color)'}
                         >
                             <FaCity />
-                            <Text>agithub</Text>
+                            <Text>
+                                {userInfo.company
+                                    ? userInfo.company
+                                    : 'Not Available'}
+                            </Text>
                         </Flex>
                     </Flex>
                 </Flex>

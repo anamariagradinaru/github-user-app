@@ -19,5 +19,12 @@ const Container = styled.div`
         background-color: var(--text-color);
         border-radius: 50%;
     }
+    /* input {
+        width: 600px;
+        height: 59px;
+        background-color: var(--card-color);
+        border: #fff;
+        outline: none;
+    } */
 `;
 export default Container;
