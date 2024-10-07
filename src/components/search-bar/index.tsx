@@ -18,6 +18,7 @@ interface Props {
             blog: string;
             company: string;
             join: string;
+            image: string;
         }>
     >;
 }
@@ -41,6 +42,7 @@ const SearchBar = ({ setUserInfo }: Props) => {
             blog: body.blog,
             company: body.company,
             join: body.created_at,
+            image: body.avatar_url,
         };
         setUserInfo(userInfo);
     }

@@ -13,7 +13,9 @@ const Container = styled.div`
         background-color: var(--card-color);
         border: #fff;
         outline: none;
+        padding: 20px;
     }
+
     display: flex;
     justify-content: center;
     align-items: center;

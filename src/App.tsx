@@ -27,6 +27,7 @@ function App() {
         blog: '',
         company: '',
         join: '',
+        image: '',
     });
 
     return (

@@ -1,6 +1,6 @@
 import { Flex, Heading, Link, Text } from '@chakra-ui/react';
 import Container from './index.styled';
-import image from '../../assets/card-image.png';
+
 import { FaMapMarkerAlt, FaPaperclip, FaTwitter, FaCity } from 'react-icons/fa';
 
 interface Props {
@@ -17,6 +17,7 @@ interface Props {
         blog: string;
         company: string;
         join: string;
+        image: string;
     };
 }
 
@@ -24,7 +25,7 @@ const Card = ({ userInfo }: Props) => {
     return (
         <Container>
             <Flex className="image" marginTop={'30px'}>
-                <img src={image} alt="je" />
+                <img src={userInfo.image} alt="" />
             </Flex>
             <Flex direction={'column'} gap={'20px'} marginTop={'30px'}>
                 <Flex direction={'column'}>
@@ -32,10 +33,7 @@ const Card = ({ userInfo }: Props) => {
                         justifyContent={'space-between'}
                         alignItems={'center'}
                     >
-                        <Heading
-                            fontSize={'39px'}
-                            color={'var(--heading-color)'}
-                        >
+                        <Heading fontSize={'30'} color={'var(--heading-color)'}>
                             {userInfo.username
                                 ? userInfo.username
                                 : 'Not Available'}
@@ -43,7 +41,7 @@ const Card = ({ userInfo }: Props) => {
                         <Text color={'#697C9A'}>{userInfo.join}</Text>
                     </Flex>
                     <Flex direction={'column'} gap={'23px'}>
-                        <Text fontSize={'24px'} color={'#0079FF'}>
+                        <Text fontSize={'20px'} color={'#0079FF'}>
                             {userInfo.email ? userInfo.email : 'Not Available'}
                         </Text>
                         <Text color={'var(--text-color)'}>{userInfo.bio}</Text>
