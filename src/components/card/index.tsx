@@ -44,7 +44,9 @@ const Card = ({ userInfo }: Props) => {
                         <Text fontSize={'20px'} color={'#0079FF'}>
                             {userInfo.email ? userInfo.email : 'Not Available'}
                         </Text>
-                        <Text color={'var(--text-color)'}>{userInfo.bio}</Text>
+                        <Text color={'var(--text-color)'}>
+                            {userInfo.bio ? userInfo.bio : 'Bio is not aviable'}
+                        </Text>
                     </Flex>
                 </Flex>
 
